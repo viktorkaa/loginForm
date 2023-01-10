@@ -8,23 +8,44 @@
     <title>loginForm</title>
     <link rel="stylesheet" href="login.css">
 
+    <script>
+        function elfogad() {
+            let felhasznalo = document.getElementById('nev').value
+            let jelszo = document.getElementById("jelszo").value
+            var box = document.getElementById("check").checked
+
+            if (felhasznalo == "admin" && jelszo == "admin1234" && box) {
+                window.alert("Üdv admin!")
+            }
+        }
+
+    </script>
+
+
 </head>
 
+<body>
 <h2>Login Form</h2>
 
     <div class="container">
-        <label for="uname"><b>Felhasználónév:</b></label>
-        <input type="text" placeholder="Felhasznalonev" name="uname" required>
+        
+        <label for="name"><b>Felhasználónév:</b></label> 
+        <input type="text" id="nev" name="nev" value="">
+        
 
-        <label for="psw"><b>Jelszó:</b></label>
-        <input type="password" placeholder="Jelszo" name="psw" required>
+        <form >
+            <label for="psw"><b>Jelszó:</b></label>
+            <input type="password" id="jelszo" name="jelszo" value="">
+        </form>
+        
+        <form >
+            <label for="check"></label>
+            <input type="checkbox" id="check" name="true" value=""> Elfogadom a feltételeket
+        </form>
+        
 
-        <button type="submit">Belépés</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Elfogadom
-        </label>
+        <button onclick="elfogad()">Belépés</button>
     </div>   
-    </div>
 </body>
 
 </html>
